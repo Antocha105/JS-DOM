@@ -4,26 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css">   
 </head>
 <body>
+    <div id="box" class=""></div>
 
-    <h1>Конвертер валют</h1>
-    <form id="corrency-converter-form">
-        <Label>
-            Сумма конвертації
-            <input type="number" id="amount" min="1" max="10000" required/>
-        </Label>
-        <label>
-            Оберіть валюту:
-            <select  id="currency" required>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-            </select>
-        </label>
-        <button type="submit">Конвертувати</button>
-        <div id="result"></div>
-    </form>
-   
-    <script src="./index.js"></script>    
+    <button class="btn">Зроби червоним</button>    
+    <button class="btn">Зроби зеленим</button>
 </body>
 </html>
