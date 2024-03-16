@@ -1,29 +1,31 @@
-const collection = document.getElementsByClassName('paragraph')
 
-//for(let i=0; i<collection.lenght; i++){
-//    collection[i].style.color = 'green';
-//}
-
-//for...of - цикл що перебирає обьект по ключам
-
-for(let p of collection){
-    p.style.color = 'green'
+const CURRENCY ={
+    USD_TO_UAN: 37.65,
+    EUR_TO_UAN: 40.61
 }
 
-const buttons=document.getElementsByTagName('button')
-const arr = [...buttons]
-console.log(buttons)
+const converterForm = document.querySelector('#currency-converter-form')
 
-arr.forEach((button)=>{
-    button.style.color = 'red'
-})
+converterForm.addEventListener('submit',convertHandler);
 
-function hello(event){
-    console.log('Helloworld')
-    event.target.addEventListener
+function convertHandler(event){
+    event.preventDefault();
 
-}
+    const amount = Number(document.querySelector('#amount').value);
 
-for(let btn of buttons){
-    btn.addEventListener('click', hello)
+    const currency = document.querySelector('#currency').value;
+    
+    let convertedAmount;
+
+    if(currency===USD){
+        convertedAmount = amount*currency.USD_TO_UAN;
+    }else if(currency===EUR){
+        convertedAmount = amount*currency.EUR_TO_UAN;
+    }else{
+        throw new Error('Something problem...!')
+    }
+
+    const resultDiv = document.querySelector('#result');
+    resultDiv.innerHTML = `${amount} ${currency} = ${convertedAmount.toFixed(2)} UAH`
+
 }
