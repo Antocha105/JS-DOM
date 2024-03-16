@@ -1,24 +1,12 @@
-function getAlert(){
-    alert ('Hello user')
+const form = document.getElementById('name-form')
+
+form.addEventListener('submit',consoleForm)
+
+function consoleForm(event){
+    event.preventDefault()
+    
+
+    const form = event.target;
+    const value = form[0].value
+    console.log(`Hello  ${value}`)
 }
-
-const button = document.getElementById('button')
-
-button.addEventListener('click',getAlert)
-
-
-
-
-const btn = document.getElementById('btn')
-
-btn.addEventListener('mouseentr',getAlert)
-
-const btnNo = document.getElementById('no-btn')
-
-btnNo.addEventListener('mouseenter',function(){
-    btnNo.style.display = 'none';
-})
-
-btnNo.addEventListener('mouseleave',function(){
-    btnNo.style.display = 'block';
-})
