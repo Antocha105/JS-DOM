@@ -18,7 +18,7 @@ const data = [
         id: 4,
         name: 'Iness',
         description: 'Description for Iness',
-        profilePicture: 'https://illustrators.ru/uploads/illustration/image/1705348/IMG_20221224_003828_372.jpg'
+        profilePicture: 'testhttps://illustrators.ru/uploads/illustration/image/1705348/IMG_20221224_003828_372.jpg'
     }, {
         id: 5,
         name: 'Alex',
