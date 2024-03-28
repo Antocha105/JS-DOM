@@ -1,16 +1,33 @@
-/*function hello(){
-    alert('HELLO USER!')
-}
+const user = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 45,
+    footSize: 45,
+// Серіалізація - процес перетворення JS об'єкта в JSON
+// Десеріалізація - процес перетворення JSON в JS об'єкт
 
-setTimeout(hello, 8000)
-*/
+// Поверхнева копія об'єкту (shallow copy) - копія, де копіюються тільки посилання на елементи, а не самі значення
 
-function count(){
-    let i = 1;
-    const intervalId = setInterval(()=>{
-        console.log(i++);
-        if(i>20){
-            clearInterval(intervalId);
+const originalObject = {
+    users: [
+        {
+            name: 'John',
+            age: 25
+        },
+        {
+            name: 'Lucky',
+            age: 33
         }
-    },1000);
+    ]
 }
+
+// JSON
+const shallowCopy = {...originalObject};
+
+
+// stringify - перетворює JS об'єкт в JSON
+// parse - перетворює JSON в JS об'єкт
+// Глибока копія (deep copy) - створення повноцінної копії об'єкта, де копіюються як посилання на його елементи, так і їхні значення
+
+const jsonString = JSON.stringify(user);
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
