@@ -1,19 +1,14 @@
-const p = new Promise(executor) //panding
+const p = new Promise(executor);
 
-function executor(resolve,reject){
-    
-    const number = Math.floor(Math.random()*15)
-    if(number%2===0){
-        resolve(number)
-    } else{
-        new RangeError(`Error happened: ${number}`)
-        reject(err)
-    }
-    resolve(); //fullfilled
+
+function executor(resolve, reject){
+    setTimeout(()=>{
+        resolve('It time')
+    },15000)
 }
 
-p.then((number)=>{
-    console.log(number)
-},(error)=>{
-    console.log(error)
+const h1 = document.querySelector('#root')
+
+p.then((str)=>{
+    h1.append(str)
 })
