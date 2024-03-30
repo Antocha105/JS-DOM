@@ -1,15 +1,19 @@
-const p = fetch('./user.json')
+const p = new Promise(executor) //panding
 
-const jsonPromise = p.then((response)=>{
-    return response.json();
-})
-.then((data)=>{
-    console.log(data)
-})
-.catch((err)=>{
-    console.log(err)
-})
-.finally(()=>{
-    console.log('FINALLY queshion closed')
-})
+function executor(resolve,reject){
+    
+    const number = Math.floor(Math.random()*15)
+    if(number%2===0){
+        resolve(number)
+    } else{
+        new RangeError(`Error happened: ${number}`)
+        reject(err)
+    }
+    resolve(); //fullfilled
+}
 
+p.then((number)=>{
+    console.log(number)
+},(error)=>{
+    console.log(error)
+})
