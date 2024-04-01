@@ -40,23 +40,35 @@ function displayWeather (weatherObject){
     //деструктуризація обектів
     const{name,main:{temp}, weather:[{description}]}=weatherObject;
 
+    const article = document.querySelector('#weather-box');
+    article.classList.add('weather-display')
+
+    const city = document.querySelector('#city')
+    city.textContent = name;
+
+    const teperature = document.querySelector('#temp');
+    temperature.textContent = `${temp}°C`
+
+    const desc = document.querySelector('#description');
+    desc.textContent = description;
+
     
-    const article = document.createElement('article')
-    article.classList.add('weather')
+    //const article = document.createElement('article')
+    //article.classList.add('weather')
 
-    const cityName = document.createElement('p')
-    cityName.append(`City name: ${name}`);
+    //const cityName = document.createElement('p')
+    //cityName.append(`City name: ${name}`);
 
-    const teperature = document.createElement('p')
-    teperature.append(`Temperature: ${temp}°C`);
+    //const teperature = document.createElement('p')
+    //teperature.append(`Temperature: ${temp}°C`);
 
-    const weatherDescription = document.createElement('p')
-    weatherDescription.append(`Weather description: ${description}`)
+    //const weatherDescription = document.createElement('p')
+    //weatherDescription.append(`Weather description: ${description}`)
 
-    article.append(cityName, teperature, weatherDescription);
+    //article.append(cityName, teperature, weatherDescription);
 
-    const section = document.querySelector('.wrapper')
-    section.append(article)
+    //const section = document.querySelector('.wrapper')
+    //section.append(article)
 }
 
 /*
